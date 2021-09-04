@@ -30,12 +30,20 @@ int main(void)
     int count = 5;
     struct Arr arr;
     init_arr(&arr, count);
-    append_arr(&arr, -1);
-    append_arr(&arr, 0);
     append_arr(&arr, 1);
     append_arr(&arr, 2);
     append_arr(&arr, 3);
+    append_arr(&arr, 4);
+    append_arr(&arr, 99);
 
+    int * val;
+    bool result = delete_arr(&arr, 5, val);
+    if (result)
+    {
+        printf("deleted element: %d \n", *val);
+    }
+    
+    //insert_arr(&arr, 6, 99);//insert pos not valid when have 4 elements
     // for (int i = 0; i < count; i++)
     // {
     //     append_arr(&arr, i);
@@ -43,11 +51,11 @@ int main(void)
 
     show_arr(&arr);
     
-    inverse_arr(&arr);
-    show_arr(&arr);
+    //inverse_arr(&arr);
+    //show_arr(&arr);
 
-    sort_arr(&arr);
-    show_arr(&arr);
+    //sort_arr(&arr);
+    //show_arr(&arr);
 
     return 0;
 }
@@ -58,7 +66,7 @@ void init_arr(struct Arr *pArr, int length) {
     pArr->pBase = (int *) malloc(sizeof(int) * length);
     if (NULL == pArr->pBase)
     {
-        printf("malloc failed");
+        printf("malloc failed\n");
         exit(-1);
     } 
     else
@@ -116,7 +124,7 @@ void show_arr(struct Arr *pArr) {
 
     } else
     {
-        printf("array is empty");
+        printf("array is empty\n");
     }
 
     return;
@@ -126,13 +134,14 @@ bool delete_arr(struct Arr *pArr, int pos, int * pVal)
 {
     if (is_empty(pArr))
     {
-        printf("array already empty");
+        printf("array already empty\n");
         return false;
     }
 
     if (pos < 1 || pos > pArr->cnt)
     {
-        printf("delete pos not valid");
+        printf("delete pos not valid\n");
+        return false;
     }
 
     *pVal = pArr->pBase[pos - 1];
@@ -153,13 +162,13 @@ bool insert_arr(struct Arr *pArr, int pos, int val)
 {
     if (is_full(pArr))
     {
-        printf("array already full");
+        printf("array already full\n");
         return false;
     }
     
     if (pos < 1 || pos > pArr->cnt+1)
     {   
-        printf("insert pos not valid");
+        printf("insert pos not valid\n");
         return false;
     }
 
