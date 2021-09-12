@@ -12,10 +12,10 @@ typedef struct Node
 PNODE create_list(void);
 void traverse_list(PNODE);
 bool is_empty(PNODE);
-int length_list(PNODE);//TODO
-void sort_list(PNODE);//TODO
-void insert_list(PNODE, int, int);//TODO insert val before pos in the list, pos start from 1
-void delete_list(PNODE, int, int*);//TODO
+int length_list(PNODE);
+void sort_list(PNODE);
+void insert_list(PNODE, int, int);//insert val before pos in the list, pos start from 1
+bool delete_list(PNODE, int, int*);
 
 int main(void)
 {
@@ -88,7 +88,7 @@ bool is_empty(PNODE pHead)
     
 }
 
-int length_list(PNODE)
+int length_list(PNODE pHead)
 {
     int count = 0;
 
@@ -98,7 +98,25 @@ int length_list(PNODE)
         count++;
         p = p->pNext;
     }
-
-
     return count;
 }
+
+//insert val before pos in the list, pos start from 1
+void insert_list(PNODE pHead, int val, int pos)
+{
+    
+}
+
+void sort_list(PNODE pHead)
+{
+
+}
+
+
+bool delete_list(PNODE pHead, int pos, int* val)
+{
+
+
+    return false;
+}
+

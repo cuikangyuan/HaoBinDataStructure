@@ -21,5 +21,13 @@
   "C_Cpp_Runner.excludeSearch": [],
   "C_Cpp_Runner.enableWarnings": true,
   "C_Cpp_Runner.warningsAsError": false,
-  "C_Cpp.errorSquiggles": "Disabled"
+  "C_Cpp.errorSquiggles": "Disabled",
+  "files.associations": {
+    "deque": "cpp",
+    "functional": "cpp",
+    "string": "cpp",
+    "unordered_map": "cpp",
+    "vector": "cpp",
+    "*.tcc": "cpp"
+  }
 }
