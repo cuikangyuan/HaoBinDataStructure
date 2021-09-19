@@ -5,6 +5,7 @@ int max(int x, int y)
 {
     return x > y ? x : y;
 }
+
  
 int main(void)
 {
@@ -19,6 +20,6 @@ int main(void)
     d = p(p(a, b), c); 
  
     printf("最大的数字是: %d\n", d);
- 
+    cout << "helo" << endl;
     return 0;
 }
